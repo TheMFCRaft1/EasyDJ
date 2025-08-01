@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Electron DJ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="deck-container">
+    <div class="deck" id="deckA">
+      <h2>Deck A</h2>
+      <input type="file" accept="audio/*" id="fileA">
+      <audio id="audioA" style="display: none;"></audio>
+      <div class="jogwheel" id="jogA"></div>
+      <div class="controls">
+        <button id="cueA">Cue</button>
+        <button id="playA">Play</button>
+        <button id="stopA">Stop</button>
+        <input type="range" id="volumeA" min="0" max="1" step="0.01" value="1">
+      </div>
+    </div>
+
+    <div class="deck" id="deckB">
+      <h2>Deck B</h2>
+      <input type="file" accept="audio/*" id="fileB">
+      <audio id="audioB" style="display: none;"></audio>
+      <div class="jogwheel" id="jogB"></div>
+      <div class="controls">
+        <button id="cueB">Cue</button>
+        <button id="playB">Play</button>
+        <button id="stopB">Stop</button>
+        <input type="range" id="volumeB" min="0" max="1" step="0.01" value="1">
+      </div>
+    </div>
+  </div>
+
+<div class="bottom-ui">
+  <div class="crossfader-container">
+    <label for="crossfader">Crossfader</label>
+    <input type="range" id="crossfader" min="0" max="1" step="0.01" value="0.5">
+  </div>
+
+  <hr class="media-divider">
+
+  <div class="media-library" id="mediaLibrary">
+    <h3>🎵 Medienverwaltung</h3>
+    <ul id="musicList"></ul>
+  </div>
+</div>
+
+
+  <script src="renderer.js"></script>
+</body>
+</html>
